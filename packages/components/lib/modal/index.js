@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import { Box, Modal, Backdrop, Button, Typography } from "@material-ui/core";
-import "./styles.scss";
 
 function ModalTC({ showTC, handleDecline, handleAccept }) {
   const [modal, setModal] = useState(false);
