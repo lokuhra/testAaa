@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import { Box, Modal, Backdrop, Button, Typography } from "@material-ui/core";
+import Modal from "@material-ui/core/Modal";
 
-function ModalTC({ showTC, handleDecline, handleAccept }) {
+import Backdrop from "@material-ui/core/Backdrop";
+
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+
+import { Box } from "@material-ui/core";
+
+export default function SimpleModal({ showTC, handleDecline, handleAccept }) {
   const [modal, setModal] = useState(false);
 
   useEffect(() => {
@@ -49,7 +57,6 @@ function ModalTC({ showTC, handleDecline, handleAccept }) {
           alignItems="center"
           width="90%"
           height="80%"
-          className={"container-terms"}
         >
           <p className="terms">
             Nuestros Términos de Servicio se actualizaron el 01 de Abril de
@@ -79,8 +86,7 @@ function ModalTC({ showTC, handleDecline, handleAccept }) {
         <Box
           display="flex"
           direction="row"
-          justifyContent="space-around"
-          width="60%"
+          justify="space-between"
           alignItems="center"
           height="10%"
         >
@@ -106,19 +112,20 @@ function ModalTC({ showTC, handleDecline, handleAccept }) {
   );
 
   return (
-    <Modal
-      open={modal}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 500,
-      }}
-    >
-      {body}
-    </Modal>
+    <div>
+      <Modal
+        open={modal}
+        // onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        {body}
+      </Modal>
+    </div>
   );
 }
-
-export default ModalTC;
