@@ -1,0 +1,463 @@
+@import 'vars';
+
+//layout
+.root {
+  display: flex;
+}
+
+//Fonts
+.roboto {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+}
+
+//common styles
+.floatRight {
+  float: right !important;
+}
+.floatLeft {
+  float: left !important;
+}
+
+.marginL10 {
+  margin-left: 10px;
+}
+
+.marginR10 {
+  margin-right: 10px;
+}
+
+html,
+.content {
+  background-color: $color-very-light-pink-two;
+}
+
+.appBar {
+  margin-bottom: 1em;
+  width: 100%;
+  height: 60px !important;
+  background-color: $color-white-two !important;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-greyish-brown !important;
+  box-shadow: none !important;
+}
+.menuButton {
+  margin-right: $spacing-2;
+  display: 'none';
+}
+.content {
+  width: 100vw;
+  margin-top: $margin-content;
+  /*margin: 1em 2vw 0.5em;*/
+}
+.logo {
+  width: 9em;
+  margin-right: $spacing-2;
+  margin-top: 17px;
+}
+.appLeft {
+  display: inline-block;
+  float: left;
+
+  & .logo {
+    width: 9em;
+    margin-right: $spacing-2;
+  }
+  & .user {
+    width: auto;
+    margin-top: $margin-menu;
+  }
+}
+.menu {
+  display: inline-block !important;
+  justify-content: space-between;
+}
+
+//ejemplo
+.title {
+  font-size: 20px;
+  color: $color-dark-royal-blue;
+  background-color: $color-white-two;
+}
+
+.hover-pointer {
+  cursor: pointer;
+}
+
+//Menu
+.appBarNav {
+  float: right;
+}
+.appBarItem {
+  display: inline-block;
+  margin-left: 30px;
+  cursor: pointer;
+  & a {
+    color: $color-greyish-brown;
+    text-decoration: none;
+  }
+
+  &:hover a,
+  &.selected a {
+    color: $color-water-blue;
+  }
+  & span {
+    margin-left: 5px;
+    float: left;
+  }
+  & svg {
+    float: left;
+  }
+}
+@media (max-width: $res-md) {
+  .appBarItem {
+    & span {
+      display: none;
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  border-radius: 5px;
+  padding: 25px 40px 40px 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+
+  .title-modal {
+    font-family: Raleway;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--greyish-brown);
+  }
+
+  fieldset {
+    border: 0px solid black;
+  }
+}
+
+.modal:focus {
+  outline-width: 0px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.combo {
+  width: 100%;
+  display: flex;
+  min-width: 100%;
+  border-radius: 5px;
+  background-color: $color-white-two;
+}
+
+.combo-events {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $color-white-two;
+
+  .MuiFormLabel-root {
+    font-family: Roboto;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--greyish-brown);
+  }
+}
+
+.combo-medical {
+  width: 50%;
+  background-color: $color-white-two;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+
+  .MuiFormLabel-root {
+    transform: translate(2px, -20px) scale(0.75) !important;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--greyish-brown);
+  }
+}
+
+.combo .MuiTextField-root {
+  width: 100%;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.combo .MuiSelect-root {
+  color: $color-brown-grey;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.pointer {
+  width: auto;
+  padding-right: 20px;
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+  background: $color-water-blue;
+  text-indent: 60px;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  color: $color-white-two;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 17.5px solid $color-very-light-pink-two;
+    border-top: 17.5px solid transparent;
+    border-bottom: 17.5px solid transparent;
+  }
+  &:first-child {
+    background: $color-white-two;
+    text-indent: 46px;
+    color: $color-charcoal-grey;
+    font-weight: 500;
+    z-index: 1;
+    margin-right: 6px;
+
+    &:after {
+      border-left: 17.5px solid $color-white-two;
+    }
+    &:before {
+      border-left: 17.5px solid $color-white-two;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: -17px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 17.5px solid $color-water-blue;
+    border-top: 17.5px solid transparent;
+    border-bottom: 17.5px solid transparent;
+  }
+}
+
+.pointer-white {
+  color: var(--charcoal-grey) !important;
+}
+
+.pointer-blue {
+  color: var(--white-two);
+}
+
+:root {
+  --robin-s-egg: #5fcaf1;
+  --deep-aqua: #0c6181;
+  --brownish-grey: #5d5d5d;
+  --greyish-brown: #4d4d4d;
+  --water-blue: #14aae1;
+  --brown-grey: #878787;
+  --light-navy: #13466b;
+  --dark-indigo: #0b283d;
+  --darkish-blue: #002184;
+  --dark-royal-blue: #001c71;
+  --navy-blue: #00134e;
+  --very-light-pink: #d8d8d8;
+  --bluey-grey: #a0a0a6;
+  --slate-grey: #55555a;
+  --charcoal-grey: #313133;
+  --dark-grey: #29292a;
+  --medium-green: #3fae53;
+  --dusty-red: #ce383f;
+  --macaroni-and-cheese: #ebab39;
+  --very-light-pink-two: #e6e6e6;
+  --very-light-pink-three: #c3c3c3;
+  --white-two: #ffffff;
+}
+
+// Fondo Login / 404
+.fullBack {
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      var(--water-blue),
+      rgba(11, 40, 61, 0.61) 80%,
+      rgba(16, 16, 17, 0.6)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--dark-royal-blue),
+      var(--dark-royal-blue)
+    );
+}
+
+.react-datepicker__input-container input {
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(195, 195, 195, 0.5);
+  background-color: var(--white-two);
+  border: 0px solid black;
+  padding: 16px !important;
+  font-family: Roboto;
+  font-size: 16px;
+  color: var(--brown-grey);
+}
+
+.button-event-menu {
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 rgba(195, 195, 195, 0.51);
+  background-color: var(--water-blue);
+
+  .MuiButton-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--white-two);
+  }
+  .MuiSvgIcon-root {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.text-event {
+  margin-left: 6px !important;
+  font-family: Roboto !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  font-stretch: normal !important;
+  font-style: normal !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  color: var(--greyish-brown) !important;
+}
+
+.ml-mr-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr-0 {
+  margin: 0 !important;
+}
+.content.events {
+  width: 98vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-disabled {
+  color: var(--very-light-pink-three);
+}
+
+/* Modal */
+.modal-views {
+  width: 270px;
+  height: 438px;
+  background-color: var(--very-light-pink-two);
+}
+
+.modal-customize {
+  width: 462px;
+  height: 371px;
+  background-color: var(--very-light-pink-two);
+}
+
+/*
+.modal-filters {
+  width: 270px;
+  height: 438px;
+  background-color: var(--very-light-pink-two);
+}
+
+.modal-settings {
+  width: 270px;
+  height: 325px;
+  background-color: var(--very-light-pink-two);
+}
+*/
+
+.terms {
+  overflow-y: scroll;
+  background-color: #e6e6e6;
+  font-size: 16px;
+  padding: 32px;
+}
+
+.terms::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.version {
+  font-size: 16px;
+}
+
+.terms-link {
+  font-size: 16px;
+}
+
+.terms-link:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.year {
+  font-size: 16px;
+  color: #878787;
+}
+
+
+@media (max-width: 910px) {
+  .modal-big-terms {
+    width: 90%;
+    min-height: 400px;
+    background-color: var(--white-two);
+  }
+}
+
+@media (min-width: 911px) {
+  .modal-big-terms {
+    width: 910px;
+    height: 634px;
+    background-color: var(--white-two);
+  }
+}
+
+.dropDownMenu {
+  border-radius: 5px !important;
+  border: '1px solid #666 !important';
+  margin-top: 8px !important;
+}
+
+.menuItem {
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--greyish-brown);
+}
+

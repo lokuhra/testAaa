@@ -1,0 +1,49 @@
+@import 'global'; 
+
+.modal-term{
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(195, 195, 195, 0.5);
+    border: solid 1px var(--very-light-pink);
+    background-color: var(--white-two);
+    overflow: hidden;
+  
+    .btn-term{
+      border-radius: 5px;
+      width: 150px;
+      height: 36px;
+    }
+
+
+  .container-terms{
+    overflow-y: auto
+  }
+    .btn-term-accept{
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fdfdfd;
+      background-color: var(--water-blue);
+    }
+    .btn-term-accept:hover {
+      background-color: $color-deep-aqua !important;
+    }
+    .btn-term-decline{
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: var(--water-blue);
+    }
+    .btn-term-decline:hover {
+      background-color: $color-deep-aqua !important;
+    }
+  }
